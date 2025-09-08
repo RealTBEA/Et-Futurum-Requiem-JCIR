@@ -12,4 +12,11 @@ repositories {
     maven {
         url 'https://jitpack.io'
     }
+    maven {
+        name "ChickenBones"
+        url "http://chickenbones.net/maven/"
+    }
+    maven {
+        url = "http://maven.cil.li/"
+    }
 }

@@ -1,6 +1,8 @@
 package ganymedes01.etfuturum;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
+import foxblocks.tbea.ForgeMultiPart;
 import ganymedes01.etfuturum.blocks.*;
 import ganymedes01.etfuturum.blocks.itemblocks.*;
 import ganymedes01.etfuturum.blocks.ores.*;
@@ -568,9 +570,12 @@ public enum ModBlocks {
 
 	public static final ModBlocks[] VALUES = values();
 
-	public static void init() {
+	public static void init()
+	{
+
 		for (ModBlocks block : VALUES) {
-			if (block.isEnabled()) {
+			if (block.isEnabled())
+			{
 				if (block.getItemBlock() != null || !block.getHasItemBlock()) {
 					GameRegistry.registerBlock(block.get(), block.getItemBlock(), block.name().toLowerCase());
 					//This part is used if the getItemBlock() is not ItemBlock.class, so we register a custom ItemBlock class as the ItemBlock
