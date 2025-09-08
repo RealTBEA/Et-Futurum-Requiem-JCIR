@@ -1,5 +1,6 @@
 package ganymedes01.etfuturum;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -13,6 +14,7 @@ import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.ReflectionHelper;
 import cpw.mods.fml.relauncher.Side;
+import foxblocks.tbea.ForgeMultiPart;
 import ganymedes01.etfuturum.api.*;
 import ganymedes01.etfuturum.api.mappings.BasicMultiBlockSound;
 import ganymedes01.etfuturum.blocks.BlockSculk;
@@ -258,6 +260,11 @@ public class EtFuturum {
 		proxy.registerEvents();
 		proxy.registerEntities();
 		proxy.registerRenderers();
+
+		if (Loader.isModLoaded("ForgeMultipart"))
+		{
+			ForgeMultiPart.registerBlocks(ModBlocks.VALUES);
+		}
 
 		CompatMisc.runModHooksInit();
 	}
